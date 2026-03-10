@@ -1,0 +1,131 @@
+Functions - reusable blocks of code used to perform specific tasks
+
+syntax
+
+function functionName (){
+    return some_result
+}
+
+function greet(){
+    return "Hello World"
+}
+
+*Arrow Functions*
+- shorter way of writing JS functions
+
+const greet = () => {
+    return "Hello World"
+}
+
+const add = (a,b) => {
+    return a + b
+}
+
+
+COMPONENTS
+-Reusable piece of UI
+-Usually a JS function that returns JSX
+-It is the building block of a React App
+          Types of Components 
+1.Functional Components(most common)   2.Class Components
+
+Functional Components are created using JS ftunctions 
+Component names must start with uppercase --- good practice is to have your Component names
+ in title case e.g Header.jsx, Navbar.jsx, Card.jsx
+
+
+Parent Component - a component that contains or renders other Components
+Child Component - a component that is rendered or used inside another component
+
+
+Passing Data From Parent to Child 
+Parent components can send data to child components using props
+-> Props are like arguments to a function
+-> Props are passed down from parent to child
+-> Child components recieve props and destructure them to display data from parent 
+N/B: Child components cant modify props, props  are read only 
+
+
+Components - small pieces of reusable UI
+Build individual & reusable components
+  -> ProductsForm.jsx
+  -> Card.jsx
+  -> Hero.jsx
+Build pages  - pages are still components 
+  -> Import multiple components that build a full page inside your pages
+  -> Products.jsx - ProductHero.jsx, ProductCard.jsx , Table.jsx
+
+
+
+              STATE IN React
+-> React doesnt watch normal variables 
+-> Changing normal variables in react doesnt trigger a re-render 
+-> React needs a special variable that it tracks
+-> This special variable is called state
+*State* - data that React remembers and uses to update the UI
+        - it's like a component's memory
+-> When state changes , React updates the page 
+-> To create state in React we use what we call a useState hook
+-> useState is imported from react
+-> useState return two things:
+ 1.state value
+ 2.setter function - function used to update state
+
+-> Inside useState() we have the initial value
+
+<a href="/products"> Products </a>
+
+
+*Routing in React*
+-> In React routing is enabled by React-Router
+-> React Router is a library that allows React apps to handle navigation and URLs -> lets you show different components
+ for different paths without page reloads
+
+npm install react-router-dom
+
+Browser Router -> wraps your React application to enable routing
+Routes - container for all Route Component
+Route - defines a path and component to render
+Link - naviagtion element - replaces anchor tag
+ 
+
+ Layout.jsx -> contains all common features of every page e.g. Navbar & Footer
+ Outlet - a placeholder element for every component that is wrapped in layout.jsx -> every single page 
+    that has access to navbar and footer
+
+COMPONENT LIFECYCLE
+-> describes stages a component goes through from the moment it appears on screen until it disappears
+1.Mounting Phase
+ -> component appears
+ -> component is created and inserted into the dom
+2.Updating Phase
+ -> when a component re-renders
+ -> happens when: state changes,props change, parent re-renders
+3.Unmounting Phase
+-> Component is removed from the DOM 
+
+
+HOOKS
+-> Functions that let you use React features(state,lifecycle,context etc) inside functional components
+-> hooks start with use keyword
+
+Rules on using hooks
+1.used at top level only
+2.only call hooks inside functional components
+
+-> useState ->useEffect -> useContext ->useRef -> useMemo ->useCallback ->Custom hooks
+
+ useState - used to track and update state
+ useEffect -> lets you run sideffects in React components
+    *sideffects* ->something outside rendering e.g.API calls,fetching data, 
+            event listeners, timers, logging
+
+useContext -> lets a component access global state without prop drilling
+   e.g passing token across pages , dark mode vs light mode
+ 
+
+Dependency array - determines how many times a sideeffect happens
+1.when there is no Dependency array -> effect runs after every render
+2.when empty - no dependencies
+             - effect runs only once , when component first mounts
+3.passing dependencies - [productData] -> run every time productData changes
