@@ -129,3 +129,10 @@ Dependency array - determines how many times a sideeffect happens
 2.when empty - no dependencies
              - effect runs only once , when component first mounts
 3.passing dependencies - [productData] -> run every time productData changes
+
+
+Data Flow
+API call -> fetch data -> render data in components 
+services -> custom hook -> page (parent) -> child(via props) -> map
+
+Custom hook -> a function that lets you reuse logic across different components

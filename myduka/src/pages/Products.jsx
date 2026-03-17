@@ -1,28 +1,28 @@
-import React, { useEffect,useState } from 'react'
-import axios from 'axios'
-import ProductsHero from '../components/ProductsHero'
-import ProductsTable from '../components/ProductsTable'
+import React from 'react'
+import { ProductsTable } from '../components/ProductsTable'
+import { ProductsHero } from '../components/ProductsHero'
+import { useGetProducts } from '../hooks/useGetProducts'
+
 
 const Products = () => {
 
-  const[productData,setProductData] = useState()
+    const {productData} = useGetProducts()
 
-  useEffect(()=>{
-    axios.get('http://127.0.0.1:8000/products')
-    .then(response => {
-       console.log(response.data)
-       setProductData(response.data)
-    })
-    
-  },[])
+    const x = 10
 
 
   return (
     <div>
-    
       <div>
-          <ProductsTable/>
+        <ProductsHero data={x}/>
       </div>
+
+      <div>
+        <ProductsTable products={productData} />
+      </div>
+
+
+
     </div>
   )
 }

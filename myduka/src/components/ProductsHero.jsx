@@ -1,16 +1,20 @@
 import React from 'react'
 
-const ProductsHero = () => {
+export const ProductsHero = ({data}) => {
+
+  const numbers = [1,2,3]
+
+  const doubled = numbers.map(num => num * 2)
+
+  console.log(doubled) //[2,4,6]
+
+  
   return (
     <div>
-        <div className='flex justify-center gap-20 bg-amber-100 text-lg py-4'>
-            <div>Home</div>
-            <div>Products</div>
-            <div>Sales</div>
-            <div>Stock</div>
-        </div>
+        <h4>This is the products page</h4>
+        <h4>Products Header</h4>
+        <h4>{data}</h4>
     </div>
   )
 }
 
-export default ProductsHero

@@ -1,6 +1,7 @@
 import React from 'react'
 
-const ProductsTable = () => {
+export const ProductsTable = ({products}) => {
+  console.log("this is products",products)
   return (
     <div>
       <div>
@@ -14,12 +15,15 @@ const ProductsTable = () => {
                   </tr>
               </thead>
               <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Milk</td>
-                    <td>50</td>
-                    <td>60</td>
+               { products.map((product)=> (
+                <tr key={product.id}>
+                    <td>{product.id}</td>
+                    <td>{product.name}</td>
+                    <td>{product.buying_price}</td>
+                    <td>{product.selling_price}</td>
                 </tr>
+               ))}
+            
               </tbody>
           </table>
       </div>
@@ -27,4 +31,3 @@ const ProductsTable = () => {
   )
 }
 
-export default ProductsTable
