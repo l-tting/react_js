@@ -136,3 +136,8 @@ API call -> fetch data -> render data in components
 services -> custom hook -> page (parent) -> child(via props) -> map
 
 Custom hook -> a function that lets you reuse logic across different components
+
+Note-> we store our urls in e .env file
+   Why? ->security  -> easy to change the url -> cleaner code
+   every single variable in .env file in React must start with VITE and be in all caps and no spaces
+    
