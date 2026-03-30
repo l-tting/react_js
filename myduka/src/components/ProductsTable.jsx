@@ -14,7 +14,7 @@ export const ProductsTable = ({products}) => {
                     <th>Selling price</th>
                   </tr>
               </thead>
-              <tbody>
+              {/* <tbody>
                { products.map((product)=> (
                 <tr key={product.id}>
                     <td>{product.id}</td>
@@ -24,7 +24,7 @@ export const ProductsTable = ({products}) => {
                 </tr>
                ))}
             
-              </tbody>
+              </tbody> */}
           </table>
       </div>
     </div>

@@ -2,19 +2,28 @@ import React from 'react'
 import { ProductsTable } from '../components/ProductsTable'
 import { ProductsHero } from '../components/ProductsHero'
 import { useGetProducts } from '../hooks/useGetProducts'
+import ProductForm from '../components/ProductForm'
+import { useCreateProduct } from '../hooks/useCreateProduct'
 
 
 const Products = () => {
 
     const {productData} = useGetProducts()
 
-    const x = 10
+    const productHook = useCreateProduct()
+
 
 
   return (
     <div>
       <div>
-        <ProductsHero data={x}/>
+        <ProductsHero/>
+      </div>
+
+      <div>
+          <ProductForm 
+          
+          />
       </div>
 
       <div>

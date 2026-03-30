@@ -18,6 +18,9 @@ export const useGetProducts = () => {
     return productData
 
 
-}
+
+    }
+
+
 
 

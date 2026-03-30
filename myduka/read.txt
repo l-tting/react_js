@@ -141,3 +141,5 @@ Note-> we store our urls in e .env file
    Why? ->security  -> easy to change the url -> cleaner code
    every single variable in .env file in React must start with VITE and be in all caps and no spaces
     
+
+service -> custom hook -> export custom hook to page -> prop drill to child component -> execute

@@ -6,6 +6,7 @@ import { createProductService } from '../services/createProductService'
 export const useCreateProduct = () => {
   
      //products ,loading & error states
+
     const [product,setProduct] = useState({
         product_name:'',
         buying_price:'',
@@ -28,6 +29,8 @@ export const useCreateProduct = () => {
 
     const handleSubmit = async (e) =>{
         e.preventDefault()
+
+ 
 
         try{
             await createProductService(product)
