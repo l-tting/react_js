@@ -5,6 +5,8 @@ import Home from './pages/Home'
 import Sales from './pages/Sales'
 import Layout from './layout/Layout'
 import Stock from './pages/Stock'
+import Login from './pages/Login'
+import { Protected } from './components/Protected'
 
 
 const App = () => {
@@ -13,12 +15,17 @@ const App = () => {
   return (
     <div>
       <Routes>
-        <Route element={ <Layout/> }>
+        <Route element={<Layout />}>
+          <Route path='/' element={<Home />} />
 
-            <Route path='/' element={<Home />} />
-            <Route path='/products' element={<Products />} />
-            <Route path='/sales' element={<Sales />} />
-            <Route path='/stock' element={ <Stock/>} />
+          <Route element={<Protected />} >
+              <Route path='/products' element={<Products />} />
+              <Route path='/sales' element={<Sales />} />
+              <Route path='/stock' element={<Stock />} />
+          </Route>
+
+          <Route path='/login' element={<Login />} />
+
 
         </Route>
       </Routes>
