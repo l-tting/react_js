@@ -14,6 +14,7 @@ const NavBar = () => {
 
   return (
     <nav className='bg-gray-200 p-4'>
+      <div className='flex gap-4'>
         <Link to='/' className='text-gray-800'> Home </Link>
 
         {isAuthenticated && (
